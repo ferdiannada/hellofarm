@@ -22,7 +22,7 @@
 						<input class="full-width has-padding has-border" name="nama" id="signup-nama" type="text" placeholder="Nama Lengkap">
 
 					</p>
-					
+
 					<p class="fieldset">
 						<label class="image-replace cd-email" for="signup-email">E-mail</label>
 						<input class="full-width has-padding has-border" name="email" id="signup-email" type="email" placeholder="Email">
@@ -51,7 +51,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <a href="#0">Sudah punya akun ? Login sekarang</a>
+          <a href="" data-toggle="modal" data-target="#nuLogin" data-dismiss="modal">Sudah punya akun ? Login sekarang</a>
         </div>
 
       </div>
