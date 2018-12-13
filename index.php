@@ -1,4 +1,4 @@
-<?php include "koneksi.php";
+<?php include ("koneksi.php");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ session_start();
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
-<div></div>
+
   <!-- Main Stylesheet File -->
   <link  href="css/style.css" rel="stylesheet">
 
@@ -81,8 +81,8 @@ session_start();
   </header><!-- #header -->
 
 <?php
-include "akun/login.php";
-include "akun/registrasi.php";
+include ("akun/login.php");
+include ("akun/registrasi.php");
 ?>
 
   <!--==========================

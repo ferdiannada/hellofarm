@@ -104,8 +104,8 @@ session_start();
   </header><!-- #header -->
 
     <?php
-include "login.php";
-include "registrasi.php";
+include("../akun/login.php");
+include("../akun/registrasi.php");
 ?>
 
   <!--==========================

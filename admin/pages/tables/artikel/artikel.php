@@ -31,6 +31,6 @@
       <a href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a>
 
     <?php } ?>
-    
+
   </body>
 </html>
