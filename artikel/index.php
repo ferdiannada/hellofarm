@@ -81,7 +81,7 @@ session_start();
           <li><a href="../toko">Toko</a></li>
           <li class="menu-active"><a href="">Artikel</a></li>
           <li><a href="#contact">Hubungi</a></li>
-          <?php if (isset($_SESSION['status'])) {?>
+          <?php if (isset($_SESSION['status'])) { ?>
             <li class="menu-has-children"><a href="#">Selamat Datang <?php echo $_SESSION['username']; ?></a>
               <ul>
 
@@ -90,20 +90,20 @@ session_start();
               </ul>
             </li>
 
-          <?php } else {?>
+          <?php } else { ?>
             <li class="menu-has-children"><a href="#">Akun</a>
               <ul>
                   <li><a href="" data-toggle="modal" data-target="#nuLogin">Login</a></li>
                   <li><a href="" data-toggle="modal" data-target="#nuRegister">Register</a></li>
               </ul>
             </li>
-        <?php }?>
+        <?php } ?>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
 
-    <?php
+<?php
 include("login.php");
 include("registrasi.php");
 ?>
@@ -239,14 +239,14 @@ while ($data = mysqli_fetch_assoc($query)) {
                   </span>
                 </div>
               </div>
-            <?php }?>
+            <?php } ?>
             <!-- End single blog -->
             <div class="blog-pagination">
               <ul class="pagination">
                 <li><a href="#">&lt;</a></li>
-                <?php for ($i = 1; $i <= $pages; $i++) {?>
+                <?php for ($i = 1; $i <= $pages; $i++) { ?>
                 <li class="active"><a href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-                <?php }?>
+                <?php } ?>
                 <li><a href="#">&gt;</a></li>
               </ul>
             </div>

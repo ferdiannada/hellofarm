@@ -35,19 +35,21 @@
 						<a href="#0" class="hide-password">Hide</a>
 
 					</p>
-
-					<p class="fieldset">
-						<label class="image-replace fa " for="signup-nohp">No Hp</label>
-						<input class="full-width has-padding has-border " name="nohp" id="signup-nohp" type="text" placeholder="08xxxxxxxxx">
-
-					</p>
-
+          <?php
+            if (isset($_GET['pesan'])) {
+              if ($_GET['pesan'] == "sama") {
+                echo "<div class='alert alert-warning'>
+                <strong>Username / email</strong> sudah di gunakan
+              </div>";
+            }
+            }
+           ?>
 					<p class="fieldset">
 						<input class="full-width has-padding" type="submit" name="register" value="Daftar">
 					</p>
 				</form>
-        </div>
 
+        </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">

@@ -35,7 +35,7 @@
                   echo "<div class='alert alert-warning'>
                   <strong>Perhatian!</strong> Anda harus <strong>login dulu</strong>
                 </div>";
-                }
+              }
               }
              ?>
 					</p>
