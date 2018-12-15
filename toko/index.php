@@ -25,7 +25,7 @@
   <link href="../lib/animate/animate.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File Header -->
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="../akun/profil/css/style.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
@@ -35,6 +35,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/nav.css" rel="stylesheet">
 
   <!-- Modal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
@@ -96,192 +97,92 @@
   <!--==========================
     Hero Section
   ============================-->
-  <section id="hero">
-    <div class="hero-container">
-      <h1>Selamat Datang di Toko Kami</h1>
-    </div>
-  </section><!-- #hero -->
 
-  <main id="main" style="margin-top: 30px;">
+  <main id="main" style="margin-top: 120px;">
 
     <!-- Page Content -->
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-lg-3">
-
-          <h3 class="my-4">Kategori</h3>
-          <div class="list-group">
-            <a href="#" class="list-group-item">Sapi</a>
-            <a href="#" class="list-group-item">Unggas</a>
-          </div>
-
-        </div>
-        <!-- /.col-lg-3 -->
-
-        <div class="col-lg-9">
-
-          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
-
         <div class="row">
+          <div class="col-lg-3 sidebar">
+            <div class="bg-white shadow">
+              
+              
+              <div class="sidebar-menu">
 
-        <?php
-					$qry = "select *from toko";
-					$eksekusi = mysqli_query($koneksi, $qry);
-					while ($tampil = mysqli_fetch_array($eksekusi)) {
-
-
-            echo "<div class='col-lg-4 col-md-6 mb-4'>";
-              echo "<div class='card h-100'>";
-                echo "<a href='#'><img class='card-img-top' src='../admin/pages/tables/gambarproduk/$tampil[nama_file]' width='700' height='250' alt=''></a>";
-                echo "<div class='card-body'>";
-                    echo "<h5 class='card-title'>
-                            <a href='#'>".$tampil['nama_produk']."</a>
-                          </h5>";
-                    echo "<div><h5 class='card-title'>Rp ".$tampil['harga']."</h5></div>";
-                  echo "<p class='card-text'>".$tampil['deskripsi']."</p>";
-                echo "</div>";
-               echo "<div><h5 class='card-title'>&nbsp; &nbsp; Stock: tersedia</h5></div>";
-              echo "</div>";
-            echo "</div>";
-
-
-          }
-				 ?>
-
-          <!-- /.row -->
-      </div>
-
-        <!-- /.col-lg-9 -->
-
-      </div>
-      <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-   <!--==========================
-      Contact Section
-    ============================-->
-    <section id="contact">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h3 class="section-title">Hubungi</h3>
-          <p class="section-description"></p>
-        </div>
-      </div>
-
-      <div class="container wow fadeInUp mt-5">
-        <div class="row justify-content-center">
-
-          <div class="col-lg-3 col-md-4">
-
-            <div class="info">
-              <div>
-                <i class="fa fa-map-marker"></i>
-                <p>Peserta Expo, Gedung TI, Politeknik Negeri Jember<br>‎Jl. Mastrip PO BOX 164 68101 Jember</p>
+                <div class="toko"><span class="fa fa-header icon"></span> Toko</div>
+                 
+                <div class="sidebar-search-text">
+                    <input class="form-control" placeholder="Pencarian..." type="text">
+                </div>
+                <!-- Sidebar navigation -->
+                <ul class="nav sidebar-nav">
+                  <li>
+                    <a href="#">
+                      <span class="fa fa-arrow-right icon"></span>
+                      Obat
+                    </a>
+                    <a href="#">
+                      <span class="fa fa-arrow-right icon"></span>
+                      Pakan
+                    </a>
+                  </li>
+                  <li class="cart">
+                    <a href="#">
+                      <span class="fa fa-shopping-cart icon"></span>
+                      Keranjang : 3
+                    </a>
+                    <a href="#">
+                      <span class="fa fa-minus icon"></span>
+                      Total Harga : $6.00
+                    </a>
+                  </li>
+                  <li style="margin-top: 10px;">
+                    <a href="#">    
+                      <button class="lihat btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Lihat Keranjang</button>
+                    </a>
+                  </li>
+                <!-- Sidebar divider -->
               </div>
-
-              <div>
-                <i class="fa fa-envelope"></i>
-                <p>ferdian.naddaa@gmail.com</p>
-              </div>
-
-              <div>
-                <i class="fa fa-phone"></i>
-                <p>082 230 270 872</p>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>
-
-          </div>
-
-          <div class="col-lg-5 col-md-8">
-            <div class="form">
-              <div id="sendmessage">Pesan kamu telah terkirim. Terima Kasih!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-                <div class="text-center"><button type="submit">Kirim Pesan</button></div>
-              </form>
             </div>
           </div>
 
-        </div>
-
-      </div>
-    </section><!-- #contact -->
+          <div class="col-lg-9">
+            <div class="product" style="margin-top: 20px;">
+                <div class="spec ">
+                  <h3>Products</h3>
+                  <div class="ser-t">
+                    <b></b>
+                    <span><i></i></span>
+                    <b class="line"></b>
+                  </div>
+                </div>
+                <div class="col-md-3 pro-1">
+                  <div class="col-m">
+                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
+                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="mid-1">
+                      <div class="women">
+                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
+                      </div>
+                      <div class="mid-2">
+                        <p ><em class="item_price">$6.00</em></p>
+                          <div class="block">
+                          <div class="starbox small ghosting"> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                        <div class="add">
+                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
   </main>
 
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>Hello Farm</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">Ropan</a>
-      </div>
-    </div>
-  </footer><!-- #footer -->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -308,6 +209,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="../login/js/index.js"></script>
+
+   <!-- product -->
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content modal-info">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
+            </div>
+            <div class="modal-body modal-spa">
+                <div class="col-md-5 span-2">
+                      <div class="item">
+                        <img src="../../web/images/of24.png" class="img-responsive" alt="">
+                      </div>
+                </div>
+                <div class="col-md-7 span-1 ">
+                  <h3>Wheat(500 g)</h3>
+                  <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+                  <div class="price_single">
+                    <span class="reducedfrom ">$6.00</span>
+                  
+                   <div class="clearfix"></div>
+                  </div>
+                  <h4 class="quick">Quick Overview:</h4>
+                  <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+                   <div class="add-to">
+                       <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Wheat" data-summary="summary 24" data-price="1.50" data-quantity="1" data-image="images/of24.png">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 </body>
 </html>

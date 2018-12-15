@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Artikel</title>
+  <title>Admin | Produk</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -35,8 +35,11 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -119,7 +122,7 @@
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $_SESSION['pengguna']; ?> - HelloFarm
+                  <?php echo $_SESSION['penggun']; ?> - HelloFarm
                   <small>Sejak 2018</small>
                 </p>
               </li>
@@ -182,7 +185,7 @@
             </span>
           </a>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Artikel</span>
             <span class="pull-right-container">
@@ -190,11 +193,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href=""><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
+            <li class=""><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li><a href="artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
-        </li>        
-        <li class="treeview">
+        </li>
+        <li class=" treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>
             <span class="pull-right-container">
@@ -202,11 +205,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
-            <li class=""><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
+            <li class=""><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
+            <li><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
           </ul>
         </li>
-        <li>
         <li>
           <a href="produk.php">
             <i class="fa fa-shopping-cart"></i> <span>Produk</span>
@@ -214,7 +216,7 @@
             </span>
           </a>
         </li>
-        <li class=" treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Transaksi</span>
             <span class="pull-right-container">
@@ -223,7 +225,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
-            <li class=""><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
+            <li class="active"><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
           </ul>
         </li>
       </ul>
@@ -236,11 +238,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Artikel
+        Data User
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Artikel</a></li>
+        <li><a href="#">Data User</a></li>
       </ol>
     </section>
 
@@ -250,34 +252,43 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Daftar Artikel</h3>
-              <a href="artikel/index.php" class="btn btn-primary" style="margin-left: 82.5%;" >Tambah Artikel</a>
+              <h3 class="box-title">Data User</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-dark table-striped">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th hidden>ID Artikel</th>
-                  <th>Judul Artikel</th>
-                  <th>Tanggal Pembuatan</th>
+                  <th>ID Penjualan</th>
+                  <th>ID User</th>
+                  <th>Tgl</th>
+                  <th>Total</th>
+                  <th>Bukti Pembayaran</th>
+                  <th>Status</th>
                   <th>Menu</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $qryArtikel = mysqli_query($koneksi, "select *from artikel");
-                    while ($artikel = mysqli_fetch_array($qryArtikel)) {
+                    $qryDataUser = mysqli_query($koneksi, "select * from user_login");
+                    while($data = mysqli_fetch_array($qryDataUser)){
                    ?>
                 <tr>
-                  <th hidden><?php echo $artikel['id_artikel']; ?></th>
-                  <td><?php echo $artikel['judul_artikel']; ?></td>
-                  <td><?php echo $artikel['tgl_posting']; ?></td>
-                  <td><a href="artikel/edit.php?id=<?php echo $artikel['id_artikel']; ?>" class='btn btn-success'>Edit</a> | <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modalHapus<?php echo $artikel['id_artikel']; ?>" >Hapus</a></td>
+                  <td>ID Penjualan</td>
+                  <td><?php echo $data['id_user']; ?></td>
+                  <td>Tgl</td>
+                  <td>Total</td>
+                  <td><button class="btn btn-default">Bukti Pembayaran</button></td>
+                  <td>Status</td>                  
+                  <td>
+                    <button class="btn btn-danger">Belum Dikirim</button> |
+                    <button class="btn btn-success">Dikirim</button>
+                  </td>
+                  <!-- <td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id']."' class='btn btn-dark'>Hapus</button></td> -->
                 </tr>
-              <?php include("artikel/modalHapus.php"); } ?>
-              </tbody>
-              </table>
+                </tbody>
+              <?php } ?>
+                </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -288,9 +299,9 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
@@ -298,6 +309,7 @@
     <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
+
 
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>

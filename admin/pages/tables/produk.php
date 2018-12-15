@@ -198,6 +198,18 @@
             <li class=""><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li><a href="artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
+        </li>        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i> <span>Data</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
+            <li class=""><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
+          </ul>
         </li>
         <li>
           <a href="produk.php">
@@ -206,12 +218,17 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="data.php">
-            <i class="fa fa-users"></i> <span>Data User</span>
+        <li class=" treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i> <span>Transaksi</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
+            <li class=""><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
+          </ul>
         </li>
       </ul>
     </section>

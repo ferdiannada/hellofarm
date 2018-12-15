@@ -43,8 +43,7 @@
     <script>
       tinymce.init({
         selector: 'textarea',
-        plugins : 'pagebreak, image code',
-        toolbar: 'undo redo | image code | pagebreak',
+        plugins : 'pagebreak, code',
         pagebreak_separator: "<!--more-->"
 
       });
