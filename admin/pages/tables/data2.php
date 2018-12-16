@@ -179,7 +179,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="../../index.php">
+          <a href="../index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
             </span>
@@ -253,7 +253,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Suplier</h3>
-              <button type="button" data-toggle="modal" data-target="#modalTambahSuplier"class="btn btn-primary" style="margin-left: 81.6%;">Tambah Suplier</button>
+              <a href="tambahSuplier.php" class="btn btn-primary" style="margin-left: 82.5%;" >Tambah Artikel</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -261,34 +261,25 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nama Suplier</th>
+                  <th>Nama</th>
                   <th>Alamat</th>
                   <th>No. Hp</th>
-                  <th>Menu</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $qryDataSuplier = mysqli_query($koneksi, "select * from suplier");
-                    while($data = mysqli_fetch_array($qryDataSuplier)){
+                    $qryDataUser = mysqli_query($koneksi, "select * from user_login");
+                    while($data = mysqli_fetch_array($qryDataUser)){
                    ?>
                 <tr>
-                  <td><?php echo $data['id_suplier']; ?></td>
-                  <td><?php echo $data['nama_suplier']; ?></td>
-                  <td><?php echo $data['alamat']; ?></td>
-                  <td><?php echo $data['no_telp']; ?></td>
-                  <td><button type="submit" class="btn btn-danger" name="hapus" data-toggle="modal" data-target="#modalHapusSuplier<?php echo $data['id_suplier']; ?>">Hapus</button>
-
-                  <button data-toggle="modal" data-target="#modalEditSuplier<?php echo $data['id_suplier']; ?>" class="btn btn-success" type="submit" data-dismiss="modal" name="batal" >Edit</button></td>
+                  <td><?php echo $data['id_user']; ?></td>
+                  <td>Nama</td>
+                  <td>Alamat</td>
+                  <td>No Hp</td>
                   <!-- <td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id']."' class='btn btn-dark'>Hapus</button></td> -->
                 </tr>
                 </tbody>
-              <?php
-                include("editSuplier.php");
-                include("hapusSuplier.php");
-               } include("tambahSuplier.php");
-
-              ?>
+              <?php } ?>
                 </table>
             </div>
             <!-- /.box-body -->

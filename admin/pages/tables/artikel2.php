@@ -193,7 +193,7 @@
             <li class=""><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li class="active"><a href=""><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
-        </li>
+        </li>        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>
@@ -275,7 +275,7 @@
                   <td><?php echo $artikel['judul_artikel']; ?></td>
                   <td><?php echo $artikel['tgl_posting']; ?></td>
                   <td>Username</td>
-                  <td>Status</td>
+                  <td>Status</td>                  
                   <td>
                     <button class="btn btn-default">Lihat Artikel</button> |
                     <button class="btn btn-danger">Tolak</button> |

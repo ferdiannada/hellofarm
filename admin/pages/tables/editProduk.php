@@ -1,4 +1,4 @@
-  <?php
+  <?php 
     $idEdit = $data['id'];
     $qrySelectEdit = "select *from toko where id = $idEdit";
     $eksekusiSelectEdit = mysqli_query($koneksi, $qrySelectEdit);
@@ -13,7 +13,7 @@
 
   <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
   <!-- akhir koneksi -->
-
+	
 	<div class="modal fade" id="editProduk<? echo $data['id']; ?>" role="dialog">
           <div class="modal-dialog">
             <!--Modal Content-->
