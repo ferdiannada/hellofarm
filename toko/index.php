@@ -104,12 +104,12 @@
         <div class="row">
           <div class="col-lg-3 sidebar">
             <div class="bg-white shadow">
-              
-              
+
+
               <div class="sidebar-menu">
 
                 <div class="toko"><span class="fa fa-header icon"></span> Toko</div>
-                 
+
                 <div class="sidebar-search-text">
                     <input class="form-control" placeholder="Pencarian..." type="text">
                 </div>
@@ -136,7 +136,7 @@
                     </a>
                   </li>
                   <li style="margin-top: 10px;">
-                    <a href="#">    
+                    <a href="#">
                       <button class="lihat btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Lihat Keranjang</button>
                     </a>
                   </li>
@@ -162,7 +162,7 @@
                     </a>
                     <div class="mid-1">
                       <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
+                        <h6><a href="single.html">Wheat</a>(500 g)</h6>
                       </div>
                       <div class="mid-2">
                         <p ><em class="item_price">$6.00</em></p>
@@ -215,7 +215,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content modal-info">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body modal-spa">
                 <div class="col-md-5 span-2">
@@ -228,7 +228,7 @@
                   <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
                   <div class="price_single">
                     <span class="reducedfrom ">$6.00</span>
-                  
+
                    <div class="clearfix"></div>
                   </div>
                   <h4 class="quick">Quick Overview:</h4>

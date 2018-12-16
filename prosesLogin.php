@@ -24,7 +24,6 @@
       $_SESSION['id_user'] = $data['id_user'];
       $_SESSION['username'] = $data['username'];
 
-
       $_SESSION['status'] = "login";
       header("location:index.php");
     }else {

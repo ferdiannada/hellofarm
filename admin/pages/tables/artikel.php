@@ -5,6 +5,7 @@
       header("location:../../login.php?pesan=belum_login");
   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,7 +194,7 @@
             <li class="active"><a href=""><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li><a href="artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
-        </li>        
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>

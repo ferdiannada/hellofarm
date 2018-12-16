@@ -253,7 +253,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Suplier</h3>
-              <button type="button" data-toggle="modal" data-target="#modalTambah"class="btn btn-primary" style="margin-left: 81.6%;">Tambah Suplier</button>
+              <button type="button" data-toggle="modal" data-target="#modalTambahSuplier"class="btn btn-primary" style="margin-left: 81.6%;">Tambah Suplier</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -261,25 +261,34 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nama</th>
+                  <th>Nama Suplier</th>
                   <th>Alamat</th>
                   <th>No. Hp</th>
+                  <th>Menu</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $qryDataUser = mysqli_query($koneksi, "select * from user_login");
-                    while($data = mysqli_fetch_array($qryDataUser)){
+                    $qryDataSuplier = mysqli_query($koneksi, "select * from suplier");
+                    while($data = mysqli_fetch_array($qryDataSuplier)){
                    ?>
                 <tr>
-                  <td><?php echo $data['id_user']; ?></td>
-                  <td>Nama</td>
-                  <td>Alamat</td>
-                  <td>No Hp</td>
+                  <td><?php echo $data['id_suplier']; ?></td>
+                  <td><?php echo $data['nama_suplier']; ?></td>
+                  <td><?php echo $data['alamat']; ?></td>
+                  <td><?php echo $data['no_telp']; ?></td>
+                  <td><button type="submit" class="btn btn-danger" name="hapus" data-toggle="modal" data-target="#modalHapusSuplier<?php echo $data['id_suplier']; ?>">Hapus</button>
+
+                  <button data-toggle="modal" data-target="#modalEditSuplier<?php echo $data['id_suplier']; ?>" class="btn btn-success" type="submit" data-dismiss="modal" name="batal" >Edit</button></td>
                   <!-- <td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id']."' class='btn btn-dark'>Hapus</button></td> -->
                 </tr>
                 </tbody>
-              <?php } include ('tambahSuplier.php'); ?>
+              <?php
+                include("editSuplier.php");
+                include("hapusSuplier.php");
+               } include("tambahSuplier.php");
+
+              ?>
                 </table>
             </div>
             <!-- /.box-body -->

@@ -1,4 +1,5 @@
 <?php
+
 	include("koneksi.php");
 	$idProduk = $_POST['kdproduk'];
 	$nmProduk = $_POST['nama_produk'];
@@ -8,5 +9,5 @@
 	$qryEdit = "UPDATE toko SET nama_produk = '$nmProduk', deskripsi = '$deskripsi', harga = '$hrg' where id = '$idProduk'";
 	$eksekusiEdit = mysqli_query($koneksi, $qryEdit);
 	header("location:produk.php");
-
+	
  ?>
