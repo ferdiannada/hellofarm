@@ -2,7 +2,7 @@
   include('koneksi.php');
   session_start();
   if ($_SESSION['cek']!="login") {
-      header("location:../../login.php?pesan=belum_login");
+      header("location:../login.php?pesan=belum_login");
   }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Produk</title>
+  <title>Admin | Artikel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -37,9 +37,9 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- Koneksi Font Awesome -->
 
 </head>
-
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -122,7 +122,7 @@
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $_SESSION['penggun']; ?> - HelloFarm
+                  <?php echo $_SESSION['pengguna']; ?> - HelloFarm
                   <small>Sejak 2018</small>
                 </p>
               </li>
@@ -179,7 +179,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="../../index.php">
+          <a href="../index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
             </span>
@@ -197,7 +197,7 @@
             <li><a href="artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
         </li>
-        <li class=" treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>
             <span class="pull-right-container">
@@ -205,8 +205,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=""><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
-            <li><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
+            <li><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
+            <li class=""><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
           </ul>
         </li>
         <li>
@@ -216,7 +216,7 @@
             </span>
           </a>
         </li>
-        <li class="active treeview">
+        <li class=" treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Transaksi</span>
             <span class="pull-right-container">
@@ -238,11 +238,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Transaksi Beli
+        Tambah Transaksi Beli
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Transaksi Beli</a></li>
+        <li><a href="#">Tambah</a></li>
       </ol>
     </section>
 
@@ -252,44 +253,29 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Transaksi Beli</h3>
-              <a href="tambahTransaksibeli.php" class="btn btn-primary" style="margin-left: 82.5%;" >Tambah Transaksi Beli</a>
+              <h3 class="box-title">Tambah Transaksi Beli</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>ID Penjualan</th>
-                  <th>ID User</th>
-                  <th>Tgl</th>
-                  <th>Total</th>
-                  <th>Bukti Pembayaran</th>
-                  <th>Status</th>
-                  <th>Menu</th>
-                </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    $qryDataUser = mysqli_query($koneksi, "select * from user_login");
-                    while($data = mysqli_fetch_array($qryDataUser)){
-                   ?>
-                <tr>
-                  <td>ID Penjualan</td>
-                  <td><?php echo $data['id_user']; ?></td>
-                  <td>Tgl</td>
-                  <td>Total</td>
-                  <td><button class="btn btn-default">Bukti Pembayaran</button></td>
-                  <td>Status</td>                  
-                  <td>
-                    <button class="btn btn-danger">Belum Dikirim</button> |
-                    <button class="btn btn-success">Dikirim</button>
-                  </td>
-                  <!-- <td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id']."' class='btn btn-dark'>Hapus</button></td> -->
-                </tr>
-                </tbody>
-              <?php } ?>
-                </table>
+              <form method="post" action="prosesTambahArtikel.php" enctype="multipart/form-data">
+                <div class="form-group mt-3" style="width:20%;">
+                  <label for="iduser" class="col-form-label">Nama Suplier :</label>
+                  <input type="text" name="judul" class="form-control" id="pwd" placeholder="Nama Suplier">
+                </div>
+                <div class="form-group mt-3" style="width:20%;">
+                  <label for="iduser" class="col-form-label">Barang :</label>
+                  <input type="text" name="judul" class="form-control" id="pwd" placeholder="Barang">
+                </div>
+                <div class="form-group mt-3" style="width:20%;">
+                  <label for="iduser" class="col-form-label">Jumlah :</label>
+                  <input type="text" name="judul" class="form-control" id="pwd" placeholder="Jumlah">
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-success" name="simpan">
+                  Simpan <span class="fa fa-save"></span>
+                </button>
+              </form>
             </div>
             <!-- /.box-body -->
           </div>
@@ -300,9 +286,9 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
@@ -310,7 +296,6 @@
     <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
-
 
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
@@ -328,18 +313,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
 </body>
 </html>
