@@ -150,7 +150,7 @@
             <li class=""><a href="pages/tables/artikel.php"><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li><a href="pages/tables/artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
-        </li>        
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>
@@ -178,8 +178,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
-            <li class=""><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
+            <li><a href="pages/tables/transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
+            <li class=""><a href="pages/tables/transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
           </ul>
         </li>
       </ul>
