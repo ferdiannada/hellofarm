@@ -1,11 +1,11 @@
 <?
-  $idHapus = $data['id'];
-  $qrySelectHapus = "SELECT *FROM toko where id = $idHapus";
+  $idHapus = $data['id_produk'];
+  $qrySelectHapus = "SELECT *FROM produk where id_produk = $idHapus";
   $eksekusiSelectHapus = mysqli_query($koneksi, $qrySelectHapus);
   $dataHapus = mysqli_fetch_array($eksekusiSelectHapus);
 ?>
 
-<div class="modal fade" id="hapusProduk<?php echo $data['id'];?>" role="dialog">
+<div class="modal fade" id="hapusProduk<?php echo $data['id_produk'];?>" role="dialog">
     <div class="modal-dialog">
       <!--Modal Content-->
       <form method="GET" action="prosesHapusProduk.php">
@@ -24,10 +24,10 @@
                  <div class="input-group-addon">
 
                   </div>
-                    <input class="form-control" id="kdproduk" name="kdproduk" placeholder="Kode Produk" value="<? echo $dataHapus['id']; ?>" type="text">
+                    <input class="form-control" id="kdproduk" name="kdproduk" placeholder="Kode Produk" value="<? echo $dataHapus['id_produk']; ?>" type="text">
                   </div>
           </div>
-          <h3>Apakah anda yakin akan menghapus data <? $dataHapus['nama_produk']; ?> ?</h3>
+          <h3>Apakah anda yakin akan menghapus data <? echo $dataHapus['nama_produk']; ?> ?</h3>
         </div>
         <div class="modal-footer">
 

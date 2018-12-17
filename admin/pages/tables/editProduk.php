@@ -1,6 +1,6 @@
-  <?php 
-    $idEdit = $data['id'];
-    $qrySelectEdit = "select *from toko where id = $idEdit";
+  <?php
+    $idEdit = $data['id_produk'];
+    $qrySelectEdit = "select *from produk where id_produk = '$idEdit'";
     $eksekusiSelectEdit = mysqli_query($koneksi, $qrySelectEdit);
     $data2 = mysqli_fetch_array($eksekusiSelectEdit);
   ?>
@@ -13,8 +13,8 @@
 
   <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
   <!-- akhir koneksi -->
-	
-	<div class="modal fade" id="editProduk<? echo $data['id']; ?>" role="dialog">
+
+	<div class="modal fade" id="editProduk<? echo $data['id_produk']; ?>" role="dialog">
           <div class="modal-dialog">
             <!--Modal Content-->
             <div class="modal-content">
@@ -37,7 +37,7 @@
                        <div class="input-group-addon">
 
                        </div>
-                       <input class="form-control" id="kdproduk" name="kdproduk" placeholder="Kode Produk" value="<? echo $data2['id']; ?>" type="text">
+                       <input class="form-control" id="kdproduk" name="kdproduk" placeholder="Kode Produk" value="<? echo $data2['id_produk']; ?>" type="text">
                       </div>
                      </div>
 
@@ -49,10 +49,21 @@
                        <div class="input-group-addon">
 
                        </div>
-                       <textarea class="form-control" id="nama_produk" name="nama_produk" placeholder="Nama Produk" rows="3"><? echo $data2['nama_produk']; ?></textarea>
+                       <input type="text" class="form-control" id="nama_produk" name="namaeditproduk" placeholder="Nama Produk" value="<? echo $data2['nama_produk']; ?>">
                       </div>
                      </div>
 
+                     <div class="form-group ">
+                      <label class="control-label " for="gambarproduk">
+                       Gambar
+                      </label>
+                      <div class="input-group">
+                       <div class="input-group-addon">
+
+                       </div>
+                       <input class="form-control" id="gambarproduk" name="fotoproduk" placeholder="Gambar Produk" type="file">
+                      </div>
+                     </div>
 
                      <div class="form-group ">
                       <label class="control-label " for="deskripsi">
@@ -62,7 +73,7 @@
                        <div class="input-group-addon">
 
                        </div>
-                       <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" rows="10"><? echo $data2['deskripsi']; ?></textarea>
+                       <textarea class="form-control" id="deskripsi" name="deskripsieditproduk" placeholder="Deskripsi" rows="10"><? echo $data2['deskripsi_produk']; ?></textarea>
                       </div>
                      </div>
 
@@ -74,11 +85,9 @@
                        <div class="input-group-addon">
                         <span>Rp</span>
                        </div>
-                       <input class="form-control" id="harga" name="harga" value="<? echo $data2['harga']; ?>" placeholder="Harga" type="number">
+                       <input class="form-control" id="harga" name="hargaeditproduk" value="<? echo $data2['harga']; ?>" placeholder="Harga" type="number">
                       </div>
                      </div>
-
-
 
                    </div>
 

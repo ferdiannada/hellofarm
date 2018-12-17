@@ -198,7 +198,7 @@
             <li class=""><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel Aktif</a></li>
             <li><a href="artikel2.php"><i class="fa fa-circle-o"></i> Artikel User</a></li>
           </ul>
-        </li>        
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>Data</span>
@@ -265,23 +265,21 @@
                 <tr>
                   <th>ID</th>
                   <th>Nama Produk</th>
-                  <th>Harga</th>
-                  <th>Tgl Posting</th>
                   <th>Stock</th>
+                  <th>Harga</th>
                   <th>Menu</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $qryTampil = "select * from toko";
+                    $qryTampil = "select * from produk";
                     $eksekusi = mysqli_query($koneksi, $qryTampil);
                     while ($data = mysqli_fetch_array($eksekusi)) {
-                        echo "<tr><th>".$data['id']."</th>";
+                        echo "<tr><th>".$data['id_produk']."</th>";
                         echo "<td>".$data['nama_produk']."</td>";
-                        echo "<td>Rp ".$data['harga']."</td>";
-                        echo "<td>".$data['tgl']."</td>";
-                        echo "<td>['stok']</td>";
-                        echo "<td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id']."' class='btn btn-dark'>Hapus</button></td></tr>";
+                        echo "<td>Rp ".$data['stok']."</td>";
+                        echo "<td>".$data['harga']."</td>";
+                        echo "<td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id_produk']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id_produk']."' class='btn btn-dark'>Hapus</button></td></tr>";
 
                         include('editProduk.php');
                         include('hapusProduk.php');
