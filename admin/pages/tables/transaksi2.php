@@ -206,7 +206,6 @@
           </a>
           <ul class="treeview-menu">
             <li class=""><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
-            <li><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
           </ul>
         </li>
         <li>
@@ -224,7 +223,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
             <li class="active"><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
           </ul>
         </li>
@@ -280,7 +278,7 @@
                   <td>Tgl</td>
                   <td>Total</td>
                   <td><button class="btn btn-default">Bukti Pembayaran</button></td>
-                  <td>Status</td>                  
+                  <td>Status</td>
                   <td>
                     <button class="btn btn-danger">Belum Dikirim</button> |
                     <button class="btn btn-success">Dikirim</button>

@@ -208,7 +208,6 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="data.php"><i class="fa fa-circle-o"></i> Data User</a></li>
-            <li class=""><a href="data2.php"><i class="fa fa-circle-o"></i> Data Suplier</a></li>
           </ul>
         </li>
         <li>
@@ -226,7 +225,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="transaksi1.php"><i class="fa fa-circle-o"></i> Transaksi Beli</a></li>
             <li class=""><a href="transaksi2.php"><i class="fa fa-circle-o"></i> Transaksi Jual</a></li>
           </ul>
         </li>
@@ -277,8 +275,8 @@
                     while ($data = mysqli_fetch_array($eksekusi)) {
                         echo "<tr><th>".$data['id_produk']."</th>";
                         echo "<td>".$data['nama_produk']."</td>";
-                        echo "<td>Rp ".$data['stok']."</td>";
-                        echo "<td>".$data['harga']."</td>";
+                        echo "<td>".$data['stok']."</td>";
+                        echo "<td>Rp".number_format($data['harga'])."</td>";
                         echo "<td><button type='submit' data-toggle='modal' data-target='#editProduk".$data['id_produk']."' class='btn btn-dark'>Edit</button> | <button type='submit' data-toggle='modal' data-target='#hapusProduk".$data['id_produk']."' class='btn btn-dark'>Hapus</button></td></tr>";
 
                         include('editProduk.php');

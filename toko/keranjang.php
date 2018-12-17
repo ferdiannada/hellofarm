@@ -1,5 +1,6 @@
-<?php include("../koneksi.php");
+<?php
   session_start();
+  include("../koneksi.php");
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +69,7 @@
           <li><a href="../#hero">Beranda</a></li>
           <li><a href="../#about">Tentang</a></li>
           <li><a href="../#portfolio">Fitur</a></li>
-          <li class="menu-active"><a href="">Toko</a></li>
+          <li class="menu-active"><a href="index.php">Toko</a></li>
           <li><a href="../artikel">Artikel</a></li>
           <li><a href="#contact">Hubungi</a></li>
           <?php if (isset($_SESSION['status'])) { ?>
@@ -108,12 +109,11 @@
         <div class="row">
           <div class="col-lg-3 sidebar">
             <div class="bg-white shadow">
-              
-              
+
               <div class="sidebar-menu">
 
                 <div class="toko"><span class="fa fa-header icon"></span> Toko</div>
-                 
+
                 <div class="sidebar-search-text">
                     <input class="form-control" placeholder="Pencarian..." type="text">
                 </div>
@@ -146,7 +146,9 @@
                           <b class="line"></b>
                         </div>
                       </div>
+                <form method="get">
 
+                </form>
                   <table class="table table-hover">
                       <thead>
                           <tr>
@@ -158,66 +160,62 @@
                           </tr>
                       </thead>
                       <tbody>
+                        <?php
+                          foreach ($_SESSION['keranjang'] as $kdproduk => $jumlah) {
+                            $ambil = mysqli_query($koneksi, "select *from produk where id_produk = '$kdproduk'");
+                            $eksAmbil = mysqli_fetch_array($ambil);
+                            $subtotal = $eksAmbil['harga'] * $jumlah;
+
+                         ?>
                           <tr>
                               <td class="col-sm-8 col-md-6">
                               <div class="media">
-                                  <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                                  <a class="thumbnail pull-left" href="#"> <img class="media-object" src="../admin/pages/tables/gambarproduk/<?php echo $eksAmbil['gambar_produk'] ?>" style="width: 72px; height: 72px;"> </a>
                                   <div class="media-body">
-                                      <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                      <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
+                                      <h4 class="media-heading"><a href="#"><?php echo $eksAmbil['nama_produk'] ?></a></h4>
+
                                       <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
                                   </div>
                               </div></td>
                               <td class="col-sm-1 col-md-1" style="text-align: center">
-                              <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                              <input type="number" name="kuantitas" class="form-control" id="exampleInputEmail1" value="1">
+
                               </td>
-                              <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
-                              <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                              <td class="col-sm-1 col-md-1 text-center"><strong>Rp<?php echo number_format($eksAmbil['harga']) ?></strong></td>
+                              <td class="col-sm-1 col-md-1 text-center"><strong>Rp</strong><?php echo number_format($subtotal); ?></td>
                               <td class="col-sm-1 col-md-1">
-                              <button type="button" class="btn btn-danger">
+                              <a href="hapuskeranjang.php?id=<?php echo $kdproduk ?>" class="btn btn-danger">
                                   <span class="fa fa-remove"></span> Remove
-                              </button></td>
+                              </a></td>
                           </tr>
-                          <tr>
-                              <td class="col-md-6">
-                              <div class="media">
-                                  <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                                  <div class="media-body">
-                                      <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                      <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                      <span>Status: </span><span class="text-warning"><strong>Leaves warehouse in 2 - 3 weeks</strong></span>
-                                  </div>
-                              </div></td>
-                              <td class="col-md-1" style="text-align: center">
-                              <input type="email" class="form-control" id="exampleInputEmail1" value="2">
-                              </td>
-                              <td class="col-md-1 text-center"><strong>$4.99</strong></td>
-                              <td class="col-md-1 text-center"><strong>$9.98</strong></td>
-                              <td class="col-md-1">
-                              <button type="button" class="btn btn-danger">
-                                  <span class="fa fa-remove"></span> Remove
-                              </button></td>
-                          </tr>
+
+                        <?php
+                        $jumlahHarga =+ $subtotal;
+                        $ongkir = 20000;
+                       }
+
+
+                        ?>
                           <tr>
                               <td>   </td>
                               <td>   </td>
                               <td>   </td>
                               <td><h5>Subtotal</h5></td>
-                              <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                              <td class="text-right"><h5><strong><?php echo number_format($jumlahHarga) ?></strong></h5></td>
                           </tr>
                           <tr>
                               <td>   </td>
                               <td>   </td>
                               <td>   </td>
                               <td><h5>Estimated shipping</h5></td>
-                              <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                              <td class="text-right"><h5>Rp<strong><?php echo number_format($ongkir) ?></strong></h5></td>
                           </tr>
                           <tr>
                               <td>   </td>
                               <td>   </td>
                               <td>   </td>
                               <td><h3>Total</h3></td>
-                              <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                              <td class="text-right"><h3>Rp<strong><?php echo number_format($jumlahHarga+$ongkir) ?></strong></h3></td>
                           </tr>
                           <tr>
                               <td>   </td>
@@ -284,6 +282,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  
+
 </body>
 </html>

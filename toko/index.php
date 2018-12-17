@@ -104,12 +104,12 @@
         <div class="row">
           <div class="col-lg-3 sidebar">
             <div class="bg-white shadow">
-              
-              
+
+
               <div class="sidebar-menu">
 
                 <div class="toko"><span class="fa fa-header icon"></span> Toko</div>
-                 
+
                 <div class="sidebar-search-text">
                     <input class="form-control" placeholder="Pencarian..." type="text">
                 </div>
@@ -125,17 +125,14 @@
                       Pakan
                     </a>
                     <div style="margin-top: 200px;"></div>
-                    <a href="#">
-                      <span class="fa fa-shopping-cart icon"></span>
-                      Keranjang : 3
-                    </a>
+
                     <a href="#">
                       <span class="fa fa-minus icon"></span>
                       Total Harga : $6.00
                     </a>
                   </li>
                   <li style="margin-top: 10px;margin-bottom: 20px;">
-                    <a href="#">    
+                    <a href="keranjang.php">
                       <button class="lihat btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Lihat Keranjang</button>
                     </a>
                   </li>
@@ -154,204 +151,36 @@
                     <b class="line"></b>
                   </div>
                 </div>
+                <?php
+                  $sqlProduk = mysqli_query($koneksi, "select *from produk");
+                  while ($tampil = mysqli_fetch_array($sqlProduk)) {
+
+                 ?>
                 <div class="col-md-3 pro-1">
                   <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
+                  <a href="" data-toggle="modal" data-target="#modalDetil<?php echo $tampil['id_produk']; ?>" class="offer-img">
+                      <img src="../admin/pages/tables/gambarproduk/<?php echo $tampil['gambar_produk']; ?>" class="img-responsive" alt="">
                     </a>
                     <div class="mid-1">
                       <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
+                        <h6><?php echo $tampil['nama_produk'] ?></h6>
                       </div>
                       <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
+                        <p ><em class="item_price">Rp<?php echo number_format($tampil['harga']) ?></em></p>
                           <div class="block">
                           <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="clearfix"></div>
                       </div>
                         <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
+                         <a href="jual.php?id=<?php echo $tampil['id_produk'] ?>" class="btn btn-danger my-cart-btn my-cart-b" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 pro-1">
-                  <div class="col-m">
-                  <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                      <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="mid-1">
-                      <div class="women">
-                        <h6><a href="single.html">Wheat</a>(500 g)</h6>             
-                      </div>
-                      <div class="mid-2">
-                        <p ><em class="item_price">$6.00</em></p>
-                          <div class="block">
-                          <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                        <div class="add">
-                         <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Tambah ke Keranjang</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <?php
+              include("modalDetil.php");
+             } ?>
               </div>
             </div>
           </div>
@@ -403,38 +232,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="../login/js/index.js"></script>
 
-   <!-- product -->
-      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content modal-info">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
-            </div>
-            <div class="modal-body modal-spa">
-                <div class="col-md-5 span-2">
-                      <div class="item">
-                        <img src="../../web/images/of24.png" class="img-responsive" alt="">
-                      </div>
-                </div>
-                <div class="col-md-7 span-1 ">
-                  <h3>Wheat(500 g)</h3>
-                  <p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
-                  <div class="price_single">
-                    <span class="reducedfrom ">$6.00</span>
-                  
-                   <div class="clearfix"></div>
-                  </div>
-                  <h4 class="quick">Quick Overview:</h4>
-                  <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-                   <div class="add-to">
-                       <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Wheat" data-summary="summary 24" data-price="1.50" data-quantity="1" data-image="images/of24.png">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
 </body>
 </html>
