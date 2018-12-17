@@ -126,52 +126,52 @@ $akun = mysqli_fetch_array($qryTampil);
             </div>
             <!-- /.col-lg-3 -->
 
-  <div class="col-lg-9">
-    <div class="container" style="margin-top: 0px;">
-<div class="card">
-<div class="card-body">
-    <div class="row">
-        <div class="col-md-12">
-            <h4>Data Profil</h4>
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <form>
-              <div class="form-group row">
-                <label for="username" class="col-4 col-form-label">Username :</label>
-                <div class="col-8">
-                  <input id="username" name="username" value="<?php echo $akun['username'] ?>" placeholder="Username" class="form-control here" type="text" disabled>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="name" class="col-4 col-form-label">Nama Lengkap :</label>
-                <div class="col-8">
-                  <input id="name" name="name" value="<?php echo $akun['nama_lengkap'] ?>" placeholder="Nama Lengkap" class="form-control here" type="text" disabled>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="email" class="col-4 col-form-label">Email :</label>
-                <div class="col-8">
-                  <input id="email" name="email" placeholder="Email" value="<?php echo $akun['email'] ?>" class="form-control here"  type="text" disabled>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="email" class="col-4 col-form-label">Nomer Hp :</label>
-                <div class="col-8">
-                  <input id="nohp" name="nohp" value="<?php echo $akun['no_telp'] ?>" placeholder="08xxxxxxxxx" class="form-control here"  type="text" disabled>
-                </div>
-              </div>
-            </form>
-        </div>
-          </div>
+            <div class="col-lg-9">
+              <div class="container" style="margin-top: 0px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>Data Profil</h4>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                          <div class="form-group row">
+                                            <label for="username" class="col-4 col-form-label">Username :</label>
+                                            <div class="col-8">
+                                              <input id="username" name="username" value="<?php echo $akun['username'] ?>" placeholder="Username" class="form-control here" type="text" disabled>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="name" class="col-4 col-form-label">Nama Lengkap :</label>
+                                            <div class="col-8">
+                                              <input id="name" name="name" value="<?php echo $akun['nama_lengkap'] ?>" placeholder="Nama Lengkap" class="form-control here" type="text" disabled>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="email" class="col-4 col-form-label">Email :</label>
+                                            <div class="col-8">
+                                              <input id="email" name="email" placeholder="Email" value="<?php echo $akun['email'] ?>" class="form-control here"  type="text" disabled>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="email" class="col-4 col-form-label">Nomer Hp :</label>
+                                            <div class="col-8">
+                                              <input id="nohp" name="nohp" value="<?php echo $akun['no_telp'] ?>" placeholder="08xxxxxxxxx" class="form-control here"  type="text" disabled>
+                                            </div>
+                                          </div>
+                                        </form>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
               </div>
-          </div>
-      </div>
-    </div>
-  </div>
+            </div>
   </main>
 
   <!--==========================

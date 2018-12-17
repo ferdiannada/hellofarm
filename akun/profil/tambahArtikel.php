@@ -184,7 +184,7 @@ $akun = mysqli_fetch_array($qryTampil);
   <!--==========================
     Footer
   ============================-->
-  <footer id="footer" style="top: 800px; padding-bottom: 70px;">
+  <footer id="footer" style="">
     <div class="footer-top">
       <div class="container">
 

@@ -58,7 +58,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <a href="" data-toggle="modal" data-target="#nuRegister" data-dismiss="modal">Belum punya akun ? Daftar sekarang</a>
+          <a href="#0">Belum punya akun ? Daftar sekarang</a>
         </div>
 
       </div>
