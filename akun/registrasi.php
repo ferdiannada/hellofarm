@@ -45,7 +45,22 @@
 					<p class="fieldset">
 						<input class="full-width has-padding" type="submit" name="register" value="Daftar">
 					</p>
+          <?php
+            if (isset($_GET['pesan'])) {
+              if ($_GET['pesan'] == "username_email_sama") {
+          ?>
+          <script>
+            $ ('#nuRegister').modal('show');
+          </script>
+          <?php
+                echo "<div class='alert alert-warning'>
+                <strong>Username / email</strong> sudah di gunakan
+              </div>";
+            }
+            }
+           ?>
 				</form>
+
         </div>
 
 

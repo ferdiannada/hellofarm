@@ -174,6 +174,17 @@ $dataAkun = mysqli_fetch_array($qryTampilAkun);
                                               <button name="submit" type="submit" class="btn btn-primary">Submit</button>
                                             </div>
                                           </div>
+                                          <?php
+                                            if (isset($_GET['peringatan'])) {
+                                              if ($_GET['peringatan'] == "edit_berhasil") {
+                                                echo "<div class='alert alert-info'><strong>Data berhasil dirubah</strong>
+                                              </div>";
+                                              }elseif ($_GET['peringatan'] == "edit_gagal") {
+                                                echo "<div class='alert alert-warning'><strong>Data gagal dirubah</strong>
+                                              </div>";
+                                              }
+                                            }
+                                           ?>
                                         </form>
                                 </div>
                             </div>
